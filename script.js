@@ -8,7 +8,7 @@ gsap.from("#scene3 img", {
     toggleActions: "play none none none"
   },
   opacity: 0,
-  duration: 1
+  duration: 10
 });
 
 // Délai sur image 4 après la 3
@@ -19,8 +19,8 @@ gsap.from("#scene4 img", {
     toggleActions: "play none none none"
   },
   opacity: 0,
-  delay: 1,
-  duration: 1
+  delay: 10,
+  duration: 10
 });
 
 // Zoom sur image 6
@@ -33,4 +33,17 @@ gsap.from("#scene6 img", {
   scale: 0.5,
   opacity: 0,
   duration: 1.2
+});
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.to(".progress-bar", {
+  height: "100%",
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".container",
+    start: "top top",
+    end: "bottom bottom",
+    scrub: true
+  }
 });
