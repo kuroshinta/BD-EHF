@@ -1,40 +1,36 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background: #f4f4f4;
-  display: flex;
-}
+gsap.registerPlugin(ScrollTrigger);
 
-.timeline {
-  position: fixed;
-  left: 10px;
-  top: 0;
-  bottom: 0;
-  width: 5px;
-  background: #333;
-  z-index: 10;
-}
+// Fondu pour image 3
+gsap.from("#scene3 img", {
+  scrollTrigger: {
+    trigger: "#scene3",
+    start: "top center",
+    toggleActions: "play none none none"
+  },
+  opacity: 0,
+  duration: 1
+});
 
-.container {
-  margin-left: 40px;
-  padding: 20px;
-  width: 100%;
-}
+// Délai sur image 4 après la 3
+gsap.from("#scene4 img", {
+  scrollTrigger: {
+    trigger: "#scene4",
+    start: "top center",
+    toggleActions: "play none none none"
+  },
+  opacity: 0,
+  delay: 1,
+  duration: 1
+});
 
-.scene {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.scene img {
-  width: 80%;
-  max-width: 800px;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-  opacity: 1;
-  transform: scale(1);
-}
+// Zoom sur image 6
+gsap.from("#scene6 img", {
+  scrollTrigger: {
+    trigger: "#scene6",
+    start: "top center",
+    toggleActions: "play none none none"
+  },
+  scale: 0.5,
+  opacity: 0,
+  duration: 1.2
+});
