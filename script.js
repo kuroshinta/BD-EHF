@@ -1,5 +1,4 @@
 gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(ScrollTrigger);
 
 document.querySelectorAll('.scene img').forEach((img, index) => {
   gsap.from(img, {
