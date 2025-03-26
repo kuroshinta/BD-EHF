@@ -1,59 +1,40 @@
 body {
   margin: 0;
+  padding: 0;
   font-family: sans-serif;
-  background: #f0f0f0;
-}
-
-.container {
+  background: #f4f4f4;
   display: flex;
-  flex-direction: row;
 }
 
 .timeline {
-  position: sticky;
+  position: fixed;
+  left: 10px;
   top: 0;
-  height: 100vh;
-  width: 50px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  bottom: 0;
+  width: 5px;
+  background: #333;
+  z-index: 10;
 }
 
-.line {
-  position: absolute;
-  width: 4px;
-  height: 80%;
-  background: #ccc;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.dot {
-  width: 16px;
-  height: 16px;
-  background: #bbb;
-  border-radius: 50%;
-  margin: 40px 0;
-  z-index: 2;
-  transition: background 0.3s;
-}
-
-.dot.active {
-  background: #2196f3;
-}
-
-.story {
-  padding: 50px;
+.container {
+  margin-left: 40px;
+  padding: 20px;
   width: 100%;
 }
 
-.step {
+.scene {
   min-height: 100vh;
-  font-size: 1.5rem;
-  padding: 20px;
-  margin-bottom: 50px;
-  background: #fff;
-  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.scene img {
+  width: 80%;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  opacity: 1;
+  transform: scale(1);
 }
