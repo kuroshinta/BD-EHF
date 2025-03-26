@@ -1,4 +1,32 @@
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
+
+document.querySelectorAll('.scene img').forEach((img, index) => {
+  gsap.from(img, {
+    scrollTrigger: {
+      trigger: img,
+      start: 'top 80%',
+      end: 'bottom 60%',
+      toggleActions: 'play none none reverse',
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1.2,
+    ease: 'power2.out'
+  });
+});
+
+gsap.to(".progress-bar", {
+  height: "100%",
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".container",
+    start: "top top",
+    end: "bottom bottom",
+    scrub: true
+  }
+});
+
 
 // Fondu pour image 3
 gsap.from("#scene3 img", {
